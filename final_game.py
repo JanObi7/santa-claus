@@ -60,13 +60,13 @@ class Player(Item):
       # steering player with cursor keys
       self.acc = pygame.Vector2(0, 0)
       self.vel.x = self.vel.y = 0
-      if self.game.keys[pygame.K_LEFT] and self.pos.x > 1/8*self.game.width:
+      if (self.game.keys[pygame.K_LEFT] or self.game.keys[pygame.K_a]) and self.pos.x > 1/8*self.game.width:
         self.vel.x -= self.maxspeed
-      if self.game.keys[pygame.K_RIGHT] and self.pos.x < 7/8*self.game.width:
+      if (self.game.keys[pygame.K_RIGHT] or self.game.keys[pygame.K_d]) and self.pos.x < 7/8*self.game.width:
         self.vel.x += self.maxspeed
-      if self.game.keys[pygame.K_UP] and self.pos.y > 1/8*self.game.height:
+      if (self.game.keys[pygame.K_UP] or self.game.keys[pygame.K_w]) and self.pos.y > 1/8*self.game.height:
         self.vel.y -= self.maxspeed
-      if self.game.keys[pygame.K_DOWN] and self.pos.y < 5/8*self.game.height:
+      if (self.game.keys[pygame.K_DOWN] or self.game.keys[pygame.K_s]) and self.pos.y < 5/8*self.game.height:
         self.vel.y += self.maxspeed
 
       # twinkle generation
